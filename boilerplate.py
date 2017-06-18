@@ -6,7 +6,7 @@ class App(tk.Frame):
 	def __init__(self, master):
 		tk.Frame.__init__(self, master)
 		self.pack()
-		self.master.title("Hello World")
+#		self.master.title("Hello World")
 		self.master.resizable(False, False)
 		self.master.tk_setPalette(background='#ececec')
 
@@ -18,24 +18,28 @@ class App(tk.Frame):
 #		self.master.geometry("+{}+{}".format(x, y))
 #		self.master.config(menu= tk.Menu(self.master))
 
-		tk.Label(self, text="This is your first GUI. (highfive)").pack()
-
+#		tk.Label(self, text=()).pack()
+		tk.Message(self, text="Do you like my cock Kristine?", font='System 14 bold', justify='left', aspect=800).pack(pady=(15, 0))
 		button_frame = tk.Frame(self)
 		button_frame.pack(padx=15, pady=(0, 15), anchor='e')
+		
 
-		tk.Button(button_frame, text='OK', default='active', command=self.click_ok).pack(side='right')
-		tk.Button(button_frame, text='Cancel', command=self.click_cancel).pack(side='right')
+		tk.Button(button_frame, text='Yes Luke I fucking love it', default='active', command=self.click_ok).pack(side='right')
+		tk.Button(button_frame, text="No Luke you're a pathetic, hungover mess", command=self.click_cancel).pack(side='right')
 
-		self.master.protocol('WM_DELETE_WINDOW', self.click_cancel)
+		
+
+#		self.master.protocol('WM_DELETE_WINDOW', self.click_cancel)
 		self.master.bind('<Return>', self.click_ok)
 		self.master.bind('<Escape>', self.click_cancel)
 
 	def click_ok(self):
-		print("the user clicked OK")
+#		dialog = App(self)
+		tk.Message(self, text="Great, drop your pants then", justify='left', aspect=800).pack(pady=(15, 0))
 
 	def click_cancel(self):
-		print("the user clicked cancel")
-		self.master.destroy()
+#		dialog = App(self)
+		tk.Message(self, text="Well you better learn to love it", justify='left', aspect=800).pack(pady=(15, 0))
 
 
 if __name__=='__main__':
